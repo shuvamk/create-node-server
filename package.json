@@ -1,0 +1,64 @@
+{
+  "name": "@shuvamk/create-node-server",
+  "private": false,
+  "version": "1.1.0",
+  "description": "A CLI tool to create production-ready Node.js backend servers with TypeScript, Express, and best practices",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "create-node-server": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "template"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "typescript",
+    "cli",
+    "generator",
+    "backend",
+    "server"
+  ],
+  "author": "Shuvam Kumar (https://github.com/shuvamk)",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.0.0",
+    "execa": "^8.0.1",
+    "fs-extra": "^11.1.1",
+    "inquirer": "^9.2.10",
+    "ora": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/inquirer": "^9.0.3",
+    "@types/jest": "^29.5.4",
+    "@types/node": "^20.5.7",
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "@typescript-eslint/parser": "^6.5.0",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "jest": "^29.6.4",
+    "prettier": "^3.0.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shuvamk/create-node-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shuvamk/create-node-server/issues"
+  },
+  "homepage": "https://github.com/shuvamk/create-node-server#readme"
+}
