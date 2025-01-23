@@ -44,6 +44,10 @@ export async function createProject(options: ProjectOptions) {
     spinner.text = "Initializing git repository...";
     await execa("git", ["init"], { cwd: projectPath });
 
+    // Install dependencies
+    spinner.text = "Installing dependencies...";
+    await execa("npm", ["install"], { cwd: projectPath });
+
     spinner.succeed(chalk.green("Project created successfully!"));
 
     return projectPath;
