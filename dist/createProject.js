@@ -14,12 +14,17 @@ export async function createProject(options) {
         const projectPath = path.join(process.cwd(), options.projectName);
         await fs.ensureDir(projectPath);
         // Copy template files
-        const templatePath = path.join(__dirname, "../template");
+        // Fix: Move up one more directory level to reach the template folder
+        const templatePath = path.join(dirname(__dirname), "template");
         await fs.copy(templatePath, projectPath);
         // Rename gitignore (npm ignores .gitignore files)
         const gitignorePath = path.join(projectPath, ".gitignoreTemplate");
+        const targetGitignorePath = path.join(projectPath, ".gitignore");
         if (await fs.pathExists(gitignorePath)) {
-            await fs.move(gitignorePath, path.join(projectPath, ".gitignore"));
+            await fs.move(gitignorePath, targetGitignorePath, { overwrite: true });
+        }
+        else {
+            spinner.warn("Could not find .gitignoreTemplate");
         }
         // Update package.json
         const packageJsonPath = path.join(projectPath, "package.json");
