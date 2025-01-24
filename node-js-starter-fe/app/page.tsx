@@ -83,7 +83,7 @@ export default function Home() {
             </Button>
             <div className="relative group">
               <Button size="lg" variant="outline">
-                npm i @shuvamk/create-node-server
+                npx @shuvamk/create-node-server
               </Button>
               <div className="absolute right-2 top-1/2 -translate-y-1/2">
                 <CopyButton value="npm i @shuvamk/create-node-server" />
@@ -158,9 +158,7 @@ export default function Home() {
             Start building your next Express.js application with confidence
           </p>
           <div className="inline-flex items-center p-4 bg-card rounded-lg shadow-lg">
-            <code className="text-sm">
-              npx @shuvamk/create-node-server my-app
-            </code>
+            <code className="text-sm">npx @shuvamk/create-node-server</code>
             <CopyButton value="npx @shuvamk/create-node-server my-app" />
           </div>
           <div className="mt-4">
